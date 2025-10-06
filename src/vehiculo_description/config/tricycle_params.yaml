@@ -1,0 +1,15 @@
+tricycle_steering_controller:
+  ros__parameters:
+    type: tricycle_steering_controller/TricycleSteeringController
+    front_steering: true
+    front_wheels_names: [direccion_fl_joint, direccion_fr_joint]
+    rear_wheels_names:  [rueda_rl_joint, rueda_rr_joint]
+    wheelbase: 1.96
+    track: 1.50           # ← nombre y valor positivos
+    wheels_radius: 0.32
+    position_feedback: false
+    base_frame_id: base_link
+    odom_frame_id: odom
+    enable_odom_tf: true
+    publish_rate: 50.0
+    cmd_vel_timeout: 0.5

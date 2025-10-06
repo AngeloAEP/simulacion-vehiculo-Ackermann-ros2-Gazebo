@@ -1,0 +1,60 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 100
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    four_wheel_steering_controller:
+      type: four_wheel_steering_controller/FourWheelSteeringController
+
+      # --- Mapeo de joints ---
+      # Dirección solo delantera (POSITION)
+      front_steering:
+        - direccion_fl_joint
+        - direccion_fr_joint
+      rear_steering: []   # sin dirección trasera
+
+      # Tracción solo trasera (VELOCITY)
+      rear_wheels:
+        - rueda_rl_joint
+        - rueda_rr_joint
+
+      # Ruedas delanteras (solo para estado/cinemática)
+      front_wheels:
+        - rueda_fl_joint
+        - rueda_fr_joint
+
+      # --- Geometría del vehículo (ajusta si difiere tu modelo) ---
+      wheelbase: 1.96          # distancia entre ejes (m)
+      front_track: 1.50        # vía delantera (m)
+      rear_track: 1.50         # vía trasera (m)
+      wheel_radius: 0.32       # radio de rueda (m)
+
+      # --- Odom / frames / I/O ---
+      base_frame_id: base_link
+      odom_frame_id: odom
+      enable_odom_tf: true
+      publish_rate: 50
+
+      # Entradas desde /cmd_vel (Twist no estampado)
+      use_stamped_vel: false
+      cmd_vel_timeout: 0.5
+
+      # Límites
+      max_steering_angle: 0.6         # rad
+      steering_angle_velocity: 1.5     # rad/s
+      linear:
+        x:
+          has_velocity_limits: true
+          max_velocity: 2.0
+          min_velocity: -2.0
+          has_acceleration_limits: true
+          max_acceleration: 2.0
+      angular:
+        z:
+          has_velocity_limits: true
+          max_velocity: 1.5
+          has_acceleration_limits: true
+          max_acceleration: 2.0
+      

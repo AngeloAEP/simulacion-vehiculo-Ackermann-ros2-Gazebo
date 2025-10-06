@@ -1,0 +1,565 @@
+<?xml version="1.0"?>
+
+<robot
+  name="vehiculo_autonomo-urdf">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.95163 1.0244E-05 0.12112"
+        rpy="0 0 0" />
+      <mass
+        value="200" />
+      <inertia
+        ixx="8"
+        ixy="0"
+        ixz="0"
+        iyy="0.16"
+        iyz="0"
+        izz="8"/>
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://vehiculo_description/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 0.3" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://vehiculo_description/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="base_link">
+    <mu1>200</mu1>
+    <mu2>200</mu2>
+    <kp>1000000</kp>
+    <kd>1</kd>
+    <material>Gazebo/Yellow</material>
+  </gazebo>
+  
+  <link
+    name="rueda_fl_link">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="12"/>
+      <inertia
+        ixx="0.586"
+        ixy="0"
+        ixz="0"
+        iyy="0.335"
+        iyz="0"
+        izz="0.335" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://vehiculo_description/meshes/rueda_fl_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://vehiculo_description/meshes/rueda_fl_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="rueda_fl_link">
+  <mu>2</mu>  <!-- Aumenta la fricción -->
+  <mu2>2</mu2>  <!-- Fricción lateral -->
+  <kp>1000000</kp>  <!-- Rigidez del contacto -->
+  <kd>2.0</kd>  <!-- Amortiguación de contacto -->
+  <minDepth>0.001</minDepth>  <!-- Profundidad mínima de contacto -->
+  </gazebo>
+  
+  <link
+    name="rueda_fr_link">
+    <inertial>
+      <origin
+        xyz="1.6886E-05 -1.2631E-05 0.010387"
+        rpy="0 0 0" />
+      <mass
+        value="12"/>
+      <inertia
+        ixx="0.586"
+        ixy="0"
+        ixz="0"
+        iyy="0.335"
+        iyz="0"
+        izz="0.335" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://vehiculo_description/meshes/rueda_fr_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://vehiculo_description/meshes/rueda_fr_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="rueda_fr_link">
+  <mu>2</mu>  <!-- Aumenta la fricción -->
+  <mu2>2</mu2>  <!-- Fricción lateral -->
+  <kp>1000000</kp>  <!-- Rigidez del contacto -->
+  <kd>2.0</kd>  <!-- Amortiguación de contacto -->
+  <minDepth>0.001</minDepth>  <!-- Profundidad mínima de contacto -->
+  </gazebo>
+  
+  <link
+    name="rueda_rl_link">
+    <inertial>
+      <origin
+        xyz="1.5795E-05 -9.7336E-06 -0.010387"
+        rpy="0 0 0" />
+      <mass
+        value="12"/>
+      <inertia
+        ixx="0.2"
+        ixy="0"
+        ixz="0"
+        iyy="0.2"
+        iyz="0"
+        izz="0.35" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://vehiculo_description/meshes/rueda_rl_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://vehiculo_description/meshes/rueda_rl_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="rueda_rl_link">
+  <mu>1.5</mu>  <!-- Aumenta la fricción -->
+  <mu2>1.5</mu2>  <!-- Fricción lateral -->
+  <kp>1000000</kp>  <!-- Rigidez del contacto -->
+  <kd>2.0</kd>  <!-- Amortiguación de contacto -->
+  <minDepth>0.001</minDepth>  <!-- Profundidad mínima de contacto -->
+  </gazebo>
+  
+  <link
+    name="rueda_rr_link">
+    <inertial>
+      <origin
+        xyz="-1.3321E-05 -1.1527E-05 0.010387"
+        rpy="0 0 0" />
+      <mass
+        value="12"/>
+      <inertia
+        ixx="0.2"
+        ixy="0"
+        ixz="0"
+        iyy="0.2"
+        iyz="0"
+        izz="0.35" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://vehiculo_description/meshes/rueda_rr_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://vehiculo_description/meshes/rueda_rr_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="rueda_rr_link">
+  <mu>1.5</mu>  <!-- Aumenta la fricción -->
+  <mu2>1.5</mu2>  <!-- Fricción lateral -->
+  <kp>1000000</kp>  <!-- Rigidez del contacto -->
+  <kd>2.0</kd>  <!-- Amortiguación de contacto -->
+  <minDepth>0.001</minDepth>  <!-- Profundidad mínima de contacto -->
+  </gazebo>
+  
+  <link
+    name="direccion_fl_link">
+    <inertial>
+      <origin
+        xyz="0.0027123 0.12435 -0.18061"
+        rpy="0 0 0" />
+      <mass
+        value="0.5" />
+      <inertia
+        ixx="10"
+        ixy="0"
+        ixz="0"
+        iyy="0.27"
+        iyz="0"
+        izz="15"/>
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://vehiculo_description/meshes/direccion_fl_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://vehiculo_description/meshes/direccion_fl_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <link
+    name="direccion_fr_link">
+    <inertial>
+      <origin
+        xyz="0.0027123 -0.12435 -0.18061"
+        rpy="0 0 0" />
+      <mass
+        value="0.5" />
+      <inertia
+        ixx="10"
+        ixy="0"
+        ixz="0"
+        iyy="0.27"
+        iyz="0"
+        izz="15"/>
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://vehiculo_description/meshes/direccion_fr_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://vehiculo_description/meshes/direccion_fr_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <!-- Link del LiDAR -->
+<link name="lidar_link">
+  <inertial>
+    <mass value="0.2"/>
+    <origin xyz="0 0 0"/>
+    <inertia ixx="1e-4" ixy="0" ixz="0" iyy="1e-4" iyz="0" izz="1e-4"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry><cylinder length="0.03" radius="0.04"/></geometry>
+    <material name="black"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry><cylinder length="0.03" radius="0.04"/></geometry>
+  </collision>
+</link>
+  
+  
+  
+  <joint
+    name="direccion_fl_joint"
+    type="revolute">
+    <origin
+      xyz="1.15 0.75045 0.23688"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="direccion_fl_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="100"
+      velocity="10"
+      lower="-0.6" 
+      upper="0.6"/>
+    <dynamics
+      damping="5.0"
+      friction="1.0" />
+  </joint>
+  
+  <joint
+    name="direccion_fr_joint"
+    type="revolute">
+    <origin
+      xyz="1.15 -0.75045 0.23688"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="direccion_fr_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="100"
+      velocity="10"
+      lower="-0.6" 
+      upper="0.6"/>
+    <dynamics
+      damping="5.0"
+      friction="1.0" />
+  </joint>
+  
+  
+  <joint
+    name="rueda_fl_joint"
+    type="continuous">
+    <origin
+      xyz="0.004 0.20714 -0.20705"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="direccion_fl_link" />
+    <child
+      link="rueda_fl_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="10"
+      velocity="10" />
+    <dynamics
+      damping="5.0"
+      friction="1.0" />
+  </joint>
+  
+  <joint
+    name="rueda_fr_joint"
+    type="continuous">
+    <origin
+      xyz="0.004 -0.20714 -0.20705"
+      rpy="-1.5708 0 0" />
+    <parent
+
+      link="direccion_fr_link" />
+    <child
+      link="rueda_fr_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="10"
+      velocity="10" />
+    <dynamics
+      damping="5.0"
+      friction="1.0" />
+  </joint>
+  
+  <joint
+    name="rueda_rl_joint"
+    type="continuous">
+    <origin
+      xyz="-1.307 0.98146 0.056044"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="rueda_rl_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="10"
+      velocity="10" />
+    <dynamics
+      damping="5.0"
+      friction="1.0" />
+  </joint>
+  
+  <joint
+    name="rueda_rr_joint"
+    type="continuous">
+    <origin
+      xyz="-1.3009 -0.97732 0.055468"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="rueda_rr_link" />
+    <axis
+
+      xyz="0 0 1" />
+    <limit
+      effort="10"
+      velocity="10" />
+    <dynamics
+      damping="5.0"
+      friction="1.0" />
+  </joint>
+  
+  <!-- Fija el LiDAR a la base (ajusta xyz para colocarlo arriba del coche) -->
+<joint name="lidar_joint" type="fixed">
+  <parent link="base_link"/>
+  <child link="lidar_link"/>
+  <origin xyz="-1.22416 0 0.77055" rpy="0 0 0"/>
+</joint>
+
+  
+<gazebo reference="lidar_link">
+  <sensor name="lidar" type="ray">
+    <update_rate>20</update_rate>
+    <pose>0 0 0 0 0 0</pose>
+    <ray>
+      <scan>
+        <horizontal>
+          <samples>1080</samples>
+          <resolution>1</resolution>
+          <min_angle>-1.5708</min_angle>
+          <max_angle>+1.5708</max_angle>
+        </horizontal>
+      </scan>
+      <range>
+        <min>0.10</min>
+        <max>25.0</max>
+        <resolution>0.01</resolution>
+      </range>
+    </ray>
+<!-- refresco más rápido -->
+<update_rate>30</update_rate>        <!-- antes 20 -->
+
+
+    <plugin name="gazebo_ros_ray_sensor" filename="libgazebo_ros_ray_sensor.so">
+      <ros>
+        <namespace>/</namespace>
+        <!-- Publica en /scan -->
+        <remapping>~/out:=/scan</remapping>
+      </ros>
+      <!-- ✅ tipo completo del mensaje -->
+      <output_type>sensor_msgs/LaserScan</output_type>
+      <frame_name>lidar_link</frame_name>
+    </plugin>
+  </sensor>
+</gazebo>
+
+
+ 
+<gazebo>
+  <plugin name="gazebo_ros2_control" filename="libgazebo_ros2_control.so">
+    <parameters>/home/angelo/ros2_ws/install/vehiculo_description/share/vehiculo_description/config/controllers_autoload.yaml</parameters>
+  </plugin>
+</gazebo>
+
+  <!-- Gazebo ros2_control -->
+<ros2_control name="GazeboSystem" type="system">
+  <hardware>
+    <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+  </hardware>
+
+  <!-- Ruedas traseras (VELOCITY) -->
+  <joint name="rueda_rl_joint">
+    <command_interface name="velocity"/>
+    <state_interface name="position"/>
+    <state_interface name="velocity"/>
+  </joint>
+  <joint name="rueda_rr_joint">
+    <command_interface name="velocity"/>
+    <state_interface name="position"/>
+    <state_interface name="velocity"/>
+  </joint>
+
+  <!-- Dirección delantera (POSITION) -->
+  <joint name="direccion_fl_joint">
+    <command_interface name="position"/>
+    <state_interface name="position"/>
+  </joint>
+  <joint name="direccion_fr_joint">
+    <command_interface name="position"/>
+    <state_interface name="position"/>
+  </joint>
+
+  <!-- Ruedas delanteras pasivas (solo estado) -->
+  <joint name="rueda_fl_joint">
+    <state_interface name="position"/>
+    <state_interface name="velocity"/>
+  </joint>
+  <joint name="rueda_fr_joint">
+    <state_interface name="position"/>
+    <state_interface name="velocity"/>
+  </joint>
+</ros2_control>
+
+</robot>

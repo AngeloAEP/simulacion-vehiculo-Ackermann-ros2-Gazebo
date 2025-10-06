@@ -1,0 +1,22 @@
+ros__parameters:
+  # Dirección delantera (POSITION)
+  front_steering: [direccion_fl_joint, direccion_fr_joint]
+  rear_steering: []
+
+  # Tracción trasera (VELOCITY)
+  rear_wheels:  [rueda_rl_joint, rueda_rr_joint]
+  front_wheels: [rueda_fl_joint, rueda_fr_joint]
+
+  # Geometría
+  wheelbase: 1.96
+  front_track: 1.5
+  rear_track: 1.5
+  wheel_radius: 0.32
+
+  # Frames / odom
+  base_frame_id: base_link
+  odom_frame_id: odom
+  enable_odom_tf: true
+  publish_rate: 50
+  use_stamped_vel: false
+  cmd_vel_timeout: 0.5

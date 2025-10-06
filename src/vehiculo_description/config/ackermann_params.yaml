@@ -1,0 +1,24 @@
+ackermann_steering_controller:
+  ros__parameters:
+    type: ackermann_steering_controller/AckermannSteeringController
+
+    # Mapeo de juntas
+    front_steering: true                         # ¡BOOL!
+    front_wheels_names: [direccion_fl_joint, direccion_fr_joint]
+    rear_wheels_names:  [rueda_rl_joint, rueda_rr_joint]
+
+    # Geometría (ajusta a tu URDF)
+    wheelbase: 1.96
+    front_wheel_track: 1.50
+    rear_wheel_track:  1.50
+    front_wheels_radius: 0.32
+    rear_wheels_radius:  0.32
+
+    # Estado/odom
+    position_feedback: false                     # traseras por velocidad
+    base_frame_id: base_link
+    odom_frame_id: odom
+    enable_odom_tf: true
+    publish_rate: 50.0
+    cmd_vel_timeout: 0.5
+    use_stamped_vel: false
